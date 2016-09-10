@@ -1,4 +1,7 @@
 #!/bin/bash
+# FTP monitor
+# By skamasle - @skamasle | skamasle.com
+
 sub=(sub1 subd2 sub3 )
 dom=domain.tld
 correo=mail@yourdomain.tld
@@ -21,7 +24,7 @@ fi
 for ft in ${sub[@]}; do
 	check $ft.$dom
 	if [ -e /tmp/{$sub}-off ] && [ $server = "on" ] ; then
-	# Here you can add notification to advice you when FTP come back, just add new mail -s etc like inline 29
+	# Here you can add notification to advice you when FTP come back, just add new mail -s etc like inline 33
 		rm -f /tmp/{$sub}-off
 	fi
 	if [ $server = "off" ] && [ ! -e /tmp/{$sub}-off ] ; then
