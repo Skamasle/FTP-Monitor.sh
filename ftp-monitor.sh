@@ -29,6 +29,6 @@ for ft in ${sub[@]}; do
 	fi
 	if [ $server = "off" ] && [ ! -e /tmp/{$sub}-off ] ; then
 		touch /tmp/{$sub}-off
-		echo "***FTP $sub.$dom IS OFF ***" | $MAIL -s "***********FTP server is DOWN in $sub Caído ***********" $correo 
+		echo "***FTP $sub.$dom IS OFF ***" | $MAIL -s "***********FTP server is DOWN in $sub ***********" $correo 
 	fi
 done
