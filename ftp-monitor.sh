@@ -7,7 +7,7 @@ dom=domain.tld
 correo=mail@yourdomain.tld
 port=21
 
-# Function whit dual check check server if is off check it again in 30 seconds, this help to prevent false positives.
+# Function whit dual check, check server, if is off check it again in 30 seconds, this help to prevent false positives.
 function check() {
 nc -w 3 -z $1 $port
 if [ $? = 1 ]; then
