@@ -22,13 +22,13 @@ fi
 }
 # Check all subdomains, create some lock files, this only send one mail when server is down
 for ft in ${sub[@]}; do
-	check $ft.$dom
-	if [ -e /tmp/{$sub}-off ] && [ $server = "on" ] ; then
+	check ${ft}.${dom}
+	if [ -e /tmp/${sub}-off ] && [ $server = "on" ] ; then
 	# Here you can add notification to advice you when FTP come back, just add new mail -s etc like inline 33
-		rm -f /tmp/{$sub}-off
+		rm -f /tmp/${sub}-off
 	fi
-	if [ $server = "off" ] && [ ! -e /tmp/{$sub}-off ] ; then
-		touch /tmp/{$sub}-off
-		echo "***FTP $sub.$dom IS OFF ***" | $MAIL -s "***********FTP server is DOWN in $sub ***********" $correo 
+	if [ $server = "off" ] && [ ! -e /tmp/${sub}-off ] ; then
+		touch /tmp/${sub}-off
+		echo "***FTP ${sub}.${dom} IS OFF ***" | $MAIL -s "***********FTP server is DOWN in $sub ***********" $correo 
 	fi
 done
