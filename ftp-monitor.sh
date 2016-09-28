@@ -25,7 +25,7 @@ for ft in ${sub[@]}; do
 	check ${ft}.${dom}
 	if [ -e /tmp/${ft}-off ] && [ $server = "on" ] ; then
 	# Here you can add notification to advice you when FTP come back, just add new mail -s etc like inline 33
-		rm -f /tmp/${sub}-off
+		rm -f /tmp/${ft}-off
 	fi
 	if [ $server = "off" ] && [ ! -e /tmp/${ft}-off ] ; then
 		touch /tmp/${ft}-off
